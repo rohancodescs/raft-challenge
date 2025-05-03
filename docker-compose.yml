@@ -14,7 +14,7 @@ services:
 
   backend:
     build:
-      context: ./frontend/.. #YOO OFIGURE THIS OUT ?>?
+      context: ./backend #YOO OFIGURE THIS OUT ?>?
       target: dev          # <- add this
     environment:
       DATABASE_URL: postgres://guestbook:password@db:5432/guestbook
