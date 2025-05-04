@@ -1,12 +1,15 @@
 import { Router } from "express";
-import { pool } from "../db.js";
+import { pool } from "../db";
+import { parsePhoneNumberWithError, ParseError } from 'libphonenumber-js';
 import { z } from "zod";
 
 const router = Router();
 const Guest = z.object({
   first_name: z.string().min(1),
   last_name: z.string().min(1),
-  phone_number: z.string().optional(),
+  phone_number: 
+    z.string().optional().transform(val => val?.trim() || undefined).refine(
+      val => !val || parsePhoneNumberWithError(val, "US").isValid(),{message: "Invalid phone number"}),
   message: z.string().optional()
 });
 
