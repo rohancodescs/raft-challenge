@@ -2,11 +2,12 @@ version: "3.9"
 
 services:
   db:
-    image: postgres:16
+    image: postgres:17
     environment:
       POSTGRES_USER: guestbook
       POSTGRES_PASSWORD: password
       POSTGRES_DB: guestbook
+      POSTGRES_HOST_AUTH_METHOD: trust
     volumes:
       - db-data:/var/lib/postgresql/data
       - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
@@ -23,7 +24,7 @@ services:
 
   frontend:
     build: ./frontend
-    depends_on: [ backend ]
+    depends_on: [backend]
     environment:
       NEXT_PUBLIC_API_BASE: http://localhost:4000
     ports: ["3000:3000"]

@@ -13,7 +13,7 @@ afterAll(() => db_1.pool.end());
 describe('Guest endpoints', () => {
     it('rejects an invalid phone number', async () => {
         const res = await (0, supertest_1.default)(index_1.app).post('/guests').send({
-            first_name: 'John', last_name: 'Doe', phone_number: 'abc', message: 'Hi'
+            first_name: 'John', last_name: 'Doe', phone_number: '4438670047', message: 'Hi'
         });
         expect(res.status).toBe(400);
     });

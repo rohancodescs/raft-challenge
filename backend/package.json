@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "cross-env DATABASE_URL=postgres://guestbook:password@localhost:5432/guestbook jest",
-    "dev": "tsx watch src/index.ts",
-    "build": "tsc",
-    "start": "node dist/index.js"
+  "dev":   "tsx watch src/index.ts",
+  "build": "tsc",
+  "test": "cross-env  PGUSER=GUESTBOOK  PGDATABASE=GUESTBOOK  PGPASSWORD=  DATABASE_URL=postgres://guestbook@localhost:5432/guestbook  jest --detectOpenHandles",
+  "start": "node dist/index.js"
   },
   "keywords": [],
   "author": "",

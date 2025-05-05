@@ -1,15 +1,15 @@
 import { Router } from "express";
 import { pool } from "../db";
 import { parsePhoneNumberWithError, ParseError } from 'libphonenumber-js';
-import { z } from "zod";
+import { z, ZodError } from "zod";
 
 const router = Router();
 const Guest = z.object({
-  first_name: z.string().min(1),
-  last_name: z.string().min(1),
+  first_name: z.string().min(1, "First name is required"),
+  last_name: z.string().min(1, "Last name is required"),
   phone_number: 
     z.string().optional().transform(val => val?.trim() || undefined).refine(
-      val => !val || parsePhoneNumberWithError(val, "US").isValid(),{message: "Invalid phone number"}),
+      val => !val || parsePhoneNumberWithError(val, "US").isValid(),{message: "Invalid phone number"}).transform(val => val ? parsePhoneNumberWithError(val, "US")!.format("E.164") : undefined),
   message: z.string().optional()
 });
 
