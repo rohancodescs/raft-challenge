@@ -2,7 +2,7 @@
 const nextConfig = {
   experimental: { optimizeCss: true },
   eslint: {
-    ignoreDuringBuilds: true,   // 👈 skips ESLint on `next build`
+    ignoreDuringBuilds: true,   // 
   },
 };
 export default nextConfig;

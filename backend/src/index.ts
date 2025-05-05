@@ -7,8 +7,8 @@ import { ParseError } from 'libphonenumber-js';
 export const app = express();
 app.use(cors());
 app.use(express.json());
-// app.use('/guests', guestRoutes);
-app.use('/api/guests', guestRoutes);
+app.use("/guests", guestRoutes);
+// app.use('/api/guests', guestRoutes);
 
 /* ---------- error handler ---------- */
 const apiErrorHandler: ErrorRequestHandler = (
