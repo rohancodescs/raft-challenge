@@ -2,7 +2,7 @@
 
 A full‑stack demo app where visitors sign a **guest book** 📝, leave a short note, and instantly see it appear in a public list.
 
-DEMO (running locally) : https://www.youtube.com/watch?v=7XwO7IOkh54&ab_channel=ItsJugu
+DEMO (running locally, all requirements hit except vercel/render host) : https://www.youtube.com/watch?v=7XwO7IOkh54&ab_channel=ItsJugu
 ---
 
 ## ✨ Features
