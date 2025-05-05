@@ -1,7 +1,8 @@
 # Guestbook – Raft Associate Full‑Stack Challenge
 
-A full‑stack demo app where visitors sign a **guest book** 📝, leave a short note, and instantly see it appear in a public list. 100 % Docker‑ized; one‑liner spin‑up.
+A full‑stack demo app where visitors sign a **guest book** 📝, leave a short note, and instantly see it appear in a public list.
 
+DEMO (running locally) : https://www.youtube.com/watch?v=7XwO7IOkh54&ab_channel=ItsJugu
 ---
 
 ## ✨ Features
