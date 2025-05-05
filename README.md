@@ -20,7 +20,8 @@ DEMO (running locally) : https://www.youtube.com/watch?v=7XwO7IOkh54&ab_channel=
 ---
 
 ## 🖼️ UI Preview:
-
+![Image](https://github.com/user-attachments/assets/b34a25fa-fc4d-4353-9611-eee831d2c2ff)
+![Image](https://github.com/user-attachments/assets/f83eb499-3c32-49ea-955a-e133fd52ae12)
 ---
 
 ## 🔧 Stack
