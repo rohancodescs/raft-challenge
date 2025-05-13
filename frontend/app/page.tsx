@@ -24,7 +24,6 @@ export default function Home() {
   async function fetchGuests() {
     try {
       const r = await fetch(`${process.env.NEXT_PUBLIC_API_BASE}/guests`);
-      console.log(process.env.NEXT_PUBLIC_API_BASE);
       setGuests(await r.json());
     } catch (error) {
       console.error("Error fetching guests:", error);

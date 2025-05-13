@@ -5,7 +5,12 @@ import { ZodError } from 'zod';
 import { ParseError } from 'libphonenumber-js';
 
 export const app = express();
-app.use(cors());
+// app.use(cors());
+app.use(
+  cors({
+    origin: 'https://raft-challenge-xi.vercel.app',
+  })
+);
 app.use(express.json());
 app.use("/guests", guestRoutes);
 // app.use('/api/guests', guestRoutes);
