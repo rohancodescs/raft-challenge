@@ -8,11 +8,15 @@ export const app = express();
 // app.use(cors());
 app.use(
   cors({
-    origin: 'https://raft-challenge-xi.vercel.app',
+    origin: [
+      // 'http://localhost:3000',                       // dev
+      'https://raft-challenge.vercel.app',           // <- replace with your Vercel URL
+    ],
+    credentials: true,      // not needed now, but safe for cookies later
   })
 );
 app.use(express.json());
-app.use("/guests", guestRoutes);
+app.use("/api/guests", guestRoutes);
 // app.use('/api/guests', guestRoutes);
 
 /* ---------- error handler ---------- */
