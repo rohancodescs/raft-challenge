@@ -6,15 +6,19 @@ import { ParseError } from 'libphonenumber-js';
 
 export const app = express();
 // app.use(cors());
+const allowed = [
+  'http://localhost:3000',
+  /^https:\/\/raft-challenge.*\.vercel\.app$/   // production + preview URLs
+];
 app.use(
   cors({
-    origin: [
-      // 'http://localhost:3000',                       // dev
-      'https://raft-challenge.vercel.app',           // <- replace with your Vercel URL
-    ],
-    credentials: true,      // not needed now, but safe for cookies later
+    origin: allowed,
+    credentials: true       
   })
 );
+app.get('/', (_req: Request, res: Response) => {
+  res.send('Guestbook API OK');
+});
 app.use(express.json());
 app.use("/api/guests", guestRoutes);
 // app.use('/api/guests', guestRoutes);
